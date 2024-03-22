@@ -204,3 +204,45 @@ function confirmAndDelete(e, infoSection) {
     }
   });
 }
+
+// Undo the deleted
+function showUndoMessage(infoSection, deletedItem) {
+  const undoMessage = document.createElement("div");
+  undoMessage.id = "undo-message";
+  undoMessage.classList.add("scale-up-animation");
+  undoMessage.textContent = "Item deleted. Click to undo.";
+  undoMessage.style.backgroundColor = "var(--secondary--color)";
+  undoMessage.style.color = "white";
+  undoMessage.style.fontWeight = "bold";
+  undoMessage.style.fontSize = "0.9rem";
+  undoMessage.style.padding = "0.5rem 1rem";
+  undoMessage.style.borderRadius = "5px";
+  undoMessage.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)";
+  undoMessage.style.marginTop = "1.5rem";
+
+  // Append the undo message to the parent of the deleted section
+  infoSection.parentNode.insertBefore(undoMessage, infoSection.nextSibling);
+
+  undoMessage.addEventListener("click", () => {
+    undoMessage.remove();
+    const idToUndo = infoSection.id.split("--")[2];
+    const index = inputList.findIndex((item) => item.id === +idToUndo);
+    inputList.splice(index, 0, deletedItem[0]);
+    infoSection.classList.remove("hidden");
+  });
+
+  // Clear the timeout when the user clicks the undo message
+  let timeoutId = setTimeout(() => {
+    deleteItemPermanently(infoSection);
+    undoMessage.remove();
+    timeoutId = null;
+  }, 3000);
+
+  // Clear the timeout if the user clicks the undo message
+  undoMessage.addEventListener("click", () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+      timeoutId = null;
+    }
+  });
+}
