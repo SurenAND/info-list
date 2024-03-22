@@ -214,3 +214,8 @@ textarea::-webkit-scrollbar {
   color: var(--dark--gray);
   margin: 0;
 }
+.icons {
+  display: flex;
+  margin: 0.5rem;
+  gap: 1rem;
+}
