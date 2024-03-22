@@ -144,4 +144,14 @@ function createInfoSection(item) {
   contentEditIcon.src = "./assets/images/edit.svg";
   contentEditIcon.alt = "edit icon";
   contentIcons.append(contentEditIcon);
+
+  // view and delete and edit
+  contentDeleteIcon.addEventListener("click", (event) => {
+    confirmAndDelete(event, infoSection);
+  });
+
+  contentViewIcon.addEventListener("click", (event) =>
+    showPopUp(event, contentDate)
+  );
+  contentEditIcon.addEventListener("click", (event) => editSubmits(event));
 }
