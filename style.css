@@ -48,3 +48,7 @@ main {
   padding: 0.63rem;
   margin-bottom: 0.63rem;
 }
+.form--section--input::placeholder {
+  vertical-align: middle;
+  color: var(--dark--gray);
+}
