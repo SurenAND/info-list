@@ -28,3 +28,8 @@
 .cursor--text {
   cursor: text;
 }
+main {
+  height: auto;
+  margin: 1rem;
+  padding: 1rem;
+}
