@@ -219,6 +219,7 @@ textarea::-webkit-scrollbar {
   margin: 0.5rem;
   gap: 1rem;
 }
+
 /* pop up modal */
 .modal--section {
   display: none;
@@ -233,11 +234,20 @@ textarea::-webkit-scrollbar {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
 }
-
 .modal--section--content {
   background-color: var(--light--gray);
   padding: 0;
   border: 0.1rem solid var(--dark--gray);
   border-radius: 0.5rem;
   width: 80%;
+}
+
+/* modal header style */
+.modal--content--header {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1rem;
+  background-color: var(--secondary--color);
+  color: var(--light--gray);
 }
