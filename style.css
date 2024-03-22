@@ -348,3 +348,11 @@ textarea::-webkit-scrollbar {
   font-family: Roboto-Medium;
   font-weight: 500;
 }
+
+/* delete confirm modal footer style */
+.delete-content--footer {
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
