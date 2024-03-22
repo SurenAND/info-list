@@ -251,3 +251,8 @@ textarea::-webkit-scrollbar {
   background-color: var(--secondary--color);
   color: var(--light--gray);
 }
+.modal--header--title {
+  font-family: Roboto-Medium;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
