@@ -96,3 +96,7 @@ textarea::-webkit-scrollbar {
   color: var(--light--gray);
   transform: scale(1.1);
 }
+.form--section--update--btn {
+  display: none;
+  text-align: center;
+}
