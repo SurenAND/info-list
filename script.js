@@ -81,4 +81,10 @@ function formatDate(date) {
   return `${year}/${month}/${day} - ${hours}:${minutes}:${seconds}`;
 }
 
-function createInfoSection(item) {}
+function createInfoSection(item) {
+  // create info div
+  const infoSection = document.createElement("div");
+  infoSection.id = `information--section--${item.id}`;
+  infoSection.className = "information--section";
+  informationSection.prepend(infoSection);
+}
