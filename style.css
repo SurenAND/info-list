@@ -90,3 +90,9 @@ textarea::-webkit-scrollbar {
   margin-right: 2rem;
   transition: transform 500ms;
 }
+.form--section--submit--btn:hover,
+.form--section--update--btn:hover {
+  background-color: var(--secondary--color);
+  color: var(--light--gray);
+  transform: scale(1.1);
+}
