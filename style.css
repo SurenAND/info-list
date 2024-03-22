@@ -65,3 +65,11 @@ textarea {
 textarea::-webkit-scrollbar {
   display: none;
 }
+/* invalid error */
+.error--message {
+  display: none;
+  color: red;
+  font-size: 0.7rem;
+  flex-basis: 100%;
+  margin-bottom: 0.3rem;
+}
