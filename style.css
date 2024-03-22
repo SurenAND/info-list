@@ -181,3 +181,9 @@ textarea::-webkit-scrollbar {
   background: var(--secondary--color);
   color: var(--light--gray);
 }
+/* information--section */
+.information--section {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
