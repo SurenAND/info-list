@@ -251,6 +251,50 @@ function showUndoMessage(infoSection, deletedItem) {
 function deleteItemPermanently(infoSection) {
   const idToDelete = infoSection.id.split("--")[2];
   const index = inputList.findIndex((item) => item.id === +idToDelete);
-  // inputList.splice(index, 1);
   infoSection.remove();
+}
+
+// View Modal PopUp
+function showPopUp(e, date) {
+  e.preventDefault();
+
+  // get button id number
+  const viewBtnId = e.target.id;
+  const viewBtnIdNumber = viewBtnId.split("--")[2];
+
+  const index = inputList.findIndex((item) => item.id === +viewBtnIdNumber);
+  // make the modal
+
+  // title
+  const modalTitle = document.getElementById("modal--header--title");
+  modalTitle.innerText = inputList[index].title;
+
+  // description
+  const modalDescription = document.getElementById(
+    "modal--header--description"
+  );
+  modalDescription.innerText = inputList[index].description;
+
+  // details
+  const modalDetail = document.getElementById("modal--body--detail");
+  modalDetail.innerText = inputList[index].details;
+
+  // submit date
+  const modalDate = document.getElementById("modal--footer--date");
+  modalDate.innerText = date.innerText;
+
+  // pop up modal
+  modalSection.style.display = "flex";
+
+  //close modal
+  const close = document.getElementById("modal--close");
+  close.addEventListener("click", () => {
+    modalSection.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modalSection) {
+      modalSection.style.display = "none";
+    }
+  });
 }
