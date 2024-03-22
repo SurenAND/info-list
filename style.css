@@ -335,3 +335,16 @@ textarea::-webkit-scrollbar {
   font-weight: 600;
   font-size: 1.5rem;
 }
+
+/* delete confirm modal body content */
+.delete-content--body {
+  height: 11vh;
+  padding: 1rem 1rem;
+  overflow: auto;
+}
+.delete-body--question {
+  font-size: 2rem;
+  text-align: center;
+  font-family: Roboto-Medium;
+  font-weight: 500;
+}
