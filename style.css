@@ -379,3 +379,8 @@ textarea::-webkit-scrollbar {
   color: var(--light--gray);
   transform: scale(1.1);
 }
+
+/* Temporary hidden info section on delete confirm */
+.hidden {
+  display: none;
+}
