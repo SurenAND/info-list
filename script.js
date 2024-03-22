@@ -392,3 +392,42 @@ options.forEach((option) => {
     sortingFunction(event);
   });
 });
+
+// sorting
+function sortingFunction(e) {
+  const sortBy = e.target.innerText;
+  if (sortBy === "Newest") {
+    inputList.sort((a, b) => {
+      const dateB = new Date(b.numericDate);
+      const dateA = new Date(a.numericDate);
+      return dateB - dateA;
+    });
+  } else if (sortBy === "Oldest") {
+    inputList.sort((a, b) => {
+      const dateB = new Date(b.numericDate);
+      const dateA = new Date(a.numericDate);
+      return dateA - dateB;
+    });
+  } else if (sortBy === "A - Z") {
+    inputList.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  // Update the informationSection's child nodes based on the sorted inputList
+  const sortedSections = [];
+  inputList.forEach((item) => {
+    const section = document.getElementById(`information--section--${item.id}`);
+    if (section) {
+      sortedSections.push(section);
+    }
+  });
+
+  // Remove existing child nodes
+  while (informationSection.firstChild) {
+    informationSection.removeChild(informationSection.firstChild);
+  }
+
+  // Insert sorted child nodes
+  sortedSections.forEach((section) => {
+    informationSection.appendChild(section);
+  });
+}
