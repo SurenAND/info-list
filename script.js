@@ -431,3 +431,10 @@ function sortingFunction(e) {
     informationSection.appendChild(section);
   });
 }
+
+// Details Input auto height raise
+formDetailsInput.addEventListener("keyup", (e) => {
+  formDetailsInput.style.height = "2.5rem";
+  let scHeight = e.target.scrollHeight;
+  formDetailsInput.style.height = `${scHeight}px`;
+});
