@@ -109,4 +109,10 @@ function createInfoSection(item) {
   contentDescription.className = "information--section--description";
   contentDescription.innerText = item.description;
   infoContent.append(contentDescription);
+
+  // create content date
+  const contentDate = document.createElement("p");
+  contentDate.className = "information--section--date";
+  contentDate.innerText = item.date;
+  infoContent.append(contentDate);
 }
