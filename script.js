@@ -128,4 +128,12 @@ function createInfoSection(item) {
   contentViewIcon.src = "./assets/images/view.svg";
   contentViewIcon.alt = "view icon";
   contentIcons.append(contentViewIcon);
+
+  // create delete icon
+  const contentDeleteIcon = document.createElement("img");
+  contentDeleteIcon.className = "cursor--pointer";
+  contentDeleteIcon.setAttribute("id", `icon--section--${item.id}`);
+  contentDeleteIcon.src = "./assets/images/delete.svg";
+  contentDeleteIcon.alt = "delete icon";
+  contentIcons.append(contentDeleteIcon);
 }
