@@ -7,3 +7,18 @@
   font-family: Roboto-Light;
   src: url(./assets/fonts/Roboto-Light.ttf);
 }
+:root {
+  --primary--color: #6c5ce7;
+  --secondary--color: #a29bfe;
+  --light--gray: #dfe6e9;
+  --dark--gray: #767a7c;
+}
+* {
+  font-family: Roboto-Light;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  cursor: default;
+  user-select: none;
+}
