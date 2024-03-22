@@ -271,3 +271,15 @@ textarea::-webkit-scrollbar {
   color: var(--dark--gray);
   cursor: pointer;
 }
+
+/* modal body content */
+.modal--content--body {
+  height: 50vh;
+  padding: 1rem 1rem;
+  overflow: auto;
+}
+
+.modal--body--detail {
+  font-family: Roboto-Light;
+  font-weight: 600;
+}
