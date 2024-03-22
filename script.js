@@ -120,4 +120,12 @@ function createInfoSection(item) {
   const contentIcons = document.createElement("div");
   contentIcons.className = "icons";
   infoSection.append(contentIcons);
+
+  // create view icon
+  const contentViewIcon = document.createElement("img");
+  contentViewIcon.className = "cursor--pointer";
+  contentViewIcon.setAttribute("id", `icon--section--${item.id}`);
+  contentViewIcon.src = "./assets/images/view.svg";
+  contentViewIcon.alt = "view icon";
+  contentIcons.append(contentViewIcon);
 }
