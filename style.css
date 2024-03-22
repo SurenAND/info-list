@@ -256,3 +256,9 @@ textarea::-webkit-scrollbar {
   font-weight: 500;
   font-size: 1.5rem;
 }
+.modal--header--description {
+  font-family: Roboto-Light;
+  font-weight: 600;
+  font-size: 0.8rem;
+  font-style: italic;
+}
