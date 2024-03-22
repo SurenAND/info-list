@@ -80,3 +80,5 @@ function formatDate(date) {
 
   return `${year}/${month}/${day} - ${hours}:${minutes}:${seconds}`;
 }
+
+function createInfoSection(item) {}
