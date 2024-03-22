@@ -39,3 +39,12 @@ function isValidForm() {
     ? titleError.style.display
     : true;
 }
+
+// get input form values
+function getFormValues() {
+  return {
+    title: formTitleInput.value,
+    description: formDescriptionInput.value,
+    details: formDetailsInput.value,
+  };
+}
