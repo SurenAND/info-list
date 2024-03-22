@@ -209,3 +209,8 @@ textarea::-webkit-scrollbar {
   font-weight: 600;
   font-size: 0.9rem;
 }
+.information--section--date {
+  font-size: 0.75rem;
+  color: var(--dark--gray);
+  margin: 0;
+}
