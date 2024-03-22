@@ -52,3 +52,7 @@ main {
   vertical-align: middle;
   color: var(--dark--gray);
 }
+.form--section--input:focus {
+  outline: auto var(--secondary--color);
+  box-shadow: 0 0 0.5rem 0.1rem var(--secondary--color);
+}
