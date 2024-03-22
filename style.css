@@ -283,3 +283,17 @@ textarea::-webkit-scrollbar {
   font-family: Roboto-Light;
   font-weight: 600;
 }
+
+/* modal footer style */
+.modal--content--footer {
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1rem;
+  background-color: var(--secondary--color);
+  color: var(--light--gray);
+}
+.modal--footer--date {
+  font-family: Roboto-Light;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
