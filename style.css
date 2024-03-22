@@ -356,3 +356,26 @@ textarea::-webkit-scrollbar {
   display: flex;
   justify-content: space-evenly;
 }
+.delete-content-delete,
+.delete-content-cancel {
+  border: 0.12rem solid var(--primary--color);
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.5rem 0.1rem var(--light--gray);
+  width: 7rem;
+  padding: 0.5rem;
+  color: var(--primary--color);
+  background-color: white;
+  font-family: Roboto-Medium;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  margin-right: 2rem;
+  transition: transform 500ms;
+}
+
+.delete-content-delete:hover,
+.delete-content-cancel:hover {
+  background-color: var(--secondary--color);
+  color: var(--light--gray);
+  transform: scale(1.1);
+}
