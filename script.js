@@ -92,4 +92,9 @@ function createInfoSection(item) {
   const leftBorder = document.createElement("div");
   leftBorder.className = "information--section--left-border";
   infoSection.append(leftBorder);
+
+  // create info content section
+  const infoContent = document.createElement("div");
+  infoContent.className = "information--section--content";
+  infoSection.append(infoContent);
 }
