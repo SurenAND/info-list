@@ -136,4 +136,12 @@ function createInfoSection(item) {
   contentDeleteIcon.src = "./assets/images/delete.svg";
   contentDeleteIcon.alt = "delete icon";
   contentIcons.append(contentDeleteIcon);
+
+  // create edit icon
+  const contentEditIcon = document.createElement("img");
+  contentEditIcon.className = "cursor--pointer";
+  contentEditIcon.setAttribute("id", `icon--section--${item.id}`);
+  contentEditIcon.src = "./assets/images/edit.svg";
+  contentEditIcon.alt = "edit icon";
+  contentIcons.append(contentEditIcon);
 }
