@@ -359,3 +359,36 @@ function editSubmits(e) {
     document.getElementById("update-button").style.display = "none";
   };
 }
+
+// dropDown Btn
+const dropdowns = document.getElementById("dropdown");
+const chevron = document.getElementById("chevron");
+const select = document.getElementById("select");
+const selected = document.getElementById("selected");
+const menu = document.getElementById("menu");
+const options = document.querySelectorAll(".menu li");
+
+select.addEventListener("click", () => {
+  select.classList.toggle("select-clicked");
+  chevron.classList.toggle("chevron--rotate");
+  menu.classList.toggle("menu-open");
+});
+
+window.addEventListener("mouseup", function (event) {
+  if (event.target != select && event.target.parentNode != select) {
+    select.classList.remove("select-clicked");
+    chevron.classList.remove("chevron--rotate");
+    menu.classList.remove("menu-open");
+  }
+});
+
+options.forEach((option) => {
+  option.addEventListener("click", (event) => {
+    selected.innerText = option.innerText;
+    select.classList.remove("select-clicked");
+    chevron.classList.remove("chevron--rotate");
+    menu.classList.remove("menu-open");
+
+    sortingFunction(event);
+  });
+});
