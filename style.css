@@ -56,3 +56,12 @@ main {
   outline: auto var(--secondary--color);
   box-shadow: 0 0 0.5rem 0.1rem var(--secondary--color);
 }
+textarea {
+  overflow-y: scroll;
+  resize: none;
+  max-height: 10rem;
+  line-height: 1.5;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
