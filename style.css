@@ -34,7 +34,7 @@ main {
   padding: 1rem;
 }
 /* form--section */
-.form--section {
+form {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
