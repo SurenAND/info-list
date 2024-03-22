@@ -438,3 +438,19 @@ formDetailsInput.addEventListener("keyup", (e) => {
   let scHeight = e.target.scrollHeight;
   formDetailsInput.style.height = `${scHeight}px`;
 });
+
+// Main event listeners
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const formValues = getFormValues();
+  const newDate = new Date();
+  const submitDate = formatDate(newDate);
+
+  if (isValidForm() === true) {
+    const newItem = createInputObject(formValues, newDate, submitDate);
+    inputList.push(newItem);
+    createInfoSection(newItem);
+    cleanInputValues();
+  }
+});
