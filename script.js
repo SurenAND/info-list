@@ -103,4 +103,10 @@ function createInfoSection(item) {
   contentTitle.className = "information--section--title";
   contentTitle.innerText = item.title;
   infoContent.append(contentTitle);
+
+  // create content description
+  const contentDescription = document.createElement("p");
+  contentDescription.className = "information--section--description";
+  contentDescription.innerText = item.description;
+  infoContent.append(contentDescription);
 }
