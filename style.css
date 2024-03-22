@@ -39,3 +39,12 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
 }
+.form--section--input {
+  height: 2.5rem;
+  flex-basis: 100%;
+  border: none;
+  box-shadow: 0 0 0.5rem 0.1rem var(--light--gray);
+  border-radius: 0.3rem;
+  padding: 0.63rem;
+  margin-bottom: 0.63rem;
+}
