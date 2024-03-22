@@ -48,3 +48,10 @@ function getFormValues() {
     details: formDetailsInput.value,
   };
 }
+
+// clean input values
+function cleanInputValues() {
+  formTitleInput.value = "";
+  formDescriptionInput.value = "";
+  formDetailsInput.value = "";
+}
