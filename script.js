@@ -298,3 +298,64 @@ function showPopUp(e, date) {
     }
   });
 }
+
+//Edit the selected
+function editSubmits(e) {
+  e.preventDefault();
+
+  // remove submit button and add update button
+  document.getElementById("submit-button").style.display = "none";
+  document.getElementById("update-button").style.display = "block";
+
+  // get inputs from inputList array
+  const editBtn = e.target;
+  const editBtnId = editBtn.id;
+  const editBtnIdNumber = editBtnId.split("--")[2];
+
+  const index = inputList.findIndex((item) => item.id === +editBtnIdNumber);
+
+  // innerText inputs from inputList array into the input tags
+  formTitleInput.value = inputList[index].title;
+  formDescriptionInput.value = inputList[index].description;
+  formDetailsInput.value = inputList[index].details;
+
+  // edit the new submitted
+  document.getElementById("update-button").onclick = function () {
+    if (isValidForm() === true) {
+      // edit the selected index of array
+      inputList[index].title = formTitleInput.value;
+      inputList[index].description = formDescriptionInput.value;
+      inputList[index].details = formDetailsInput.value;
+
+      // Edited Date
+      const toEditDate = new Date();
+      const editedDate = ` (Edited on ${toEditDate.getFullYear()}/${
+        toEditDate.getMonth() + 1
+      }/${toEditDate.getDate()} - ${toEditDate.getHours()}:${toEditDate.getMinutes()}:${toEditDate.getSeconds()})`;
+
+      inputList[index].editDate = inputList[index].date + editedDate;
+
+      // innerText inputs from inputList array into the edited section
+      const editedContentTitle = editBtn.parentNode.parentNode.querySelector(
+        ".information--section--title"
+      );
+      const editedContentDescription =
+        editBtn.parentNode.parentNode.querySelector(
+          ".information--section--description"
+        );
+      const editedContentDate = editBtn.parentNode.parentNode.querySelector(
+        ".information--section--date"
+      );
+
+      editedContentTitle.innerText = inputList[index].title;
+      editedContentDescription.innerText = inputList[index].description;
+      editedContentDate.innerText = inputList[index].editDate;
+    }
+
+    cleanInputValues();
+
+    // remove update button and restore submit button
+    document.getElementById("submit-button").style.display = "block";
+    document.getElementById("update-button").style.display = "none";
+  };
+}
