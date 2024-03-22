@@ -55,3 +55,16 @@ function cleanInputValues() {
   formDescriptionInput.value = "";
   formDetailsInput.value = "";
 }
+
+// create an object from input values
+function createInputObject(formValues, newDate, submitDate) {
+  return {
+    id: ++currentId,
+    title: formValues.title,
+    description: formValues.description,
+    details: formValues.details,
+    date: submitDate,
+    numericDate: newDate.getTime(),
+    editDate: "",
+  };
+}
