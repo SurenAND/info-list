@@ -262,3 +262,12 @@ textarea::-webkit-scrollbar {
   font-size: 0.8rem;
   font-style: italic;
 }
+.modal--close {
+  color: var(--light--gray);
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+.modal--close:hover {
+  color: var(--dark--gray);
+  cursor: pointer;
+}
