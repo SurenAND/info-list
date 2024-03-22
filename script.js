@@ -87,4 +87,9 @@ function createInfoSection(item) {
   infoSection.id = `information--section--${item.id}`;
   infoSection.className = "information--section";
   informationSection.prepend(infoSection);
+
+  // create left border
+  const leftBorder = document.createElement("div");
+  leftBorder.className = "information--section--left-border";
+  infoSection.append(leftBorder);
 }
