@@ -115,4 +115,9 @@ function createInfoSection(item) {
   contentDate.className = "information--section--date";
   contentDate.innerText = item.date;
   infoContent.append(contentDate);
+
+  // create icons
+  const contentIcons = document.createElement("div");
+  contentIcons.className = "icons";
+  infoSection.append(contentIcons);
 }
