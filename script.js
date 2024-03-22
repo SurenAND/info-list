@@ -97,4 +97,10 @@ function createInfoSection(item) {
   const infoContent = document.createElement("div");
   infoContent.className = "information--section--content";
   infoSection.append(infoContent);
+
+  // create content title
+  const contentTitle = document.createElement("p");
+  contentTitle.className = "information--section--title";
+  contentTitle.innerText = item.title;
+  infoContent.append(contentTitle);
 }
