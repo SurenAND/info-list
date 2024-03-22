@@ -246,3 +246,11 @@ function showUndoMessage(infoSection, deletedItem) {
     }
   });
 }
+
+// delete the item permanently if not undo
+function deleteItemPermanently(infoSection) {
+  const idToDelete = infoSection.id.split("--")[2];
+  const index = inputList.findIndex((item) => item.id === +idToDelete);
+  // inputList.splice(index, 1);
+  infoSection.remove();
+}
