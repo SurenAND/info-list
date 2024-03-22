@@ -187,3 +187,10 @@ textarea::-webkit-scrollbar {
   display: flex;
   align-items: center;
 }
+.information--section--left-border {
+  align-self: baseline;
+  margin-top: 0.2rem;
+  border: 0.18rem solid var(--secondary--color);
+  border-radius: 0.63rem;
+  height: 2.4rem;
+}
