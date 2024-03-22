@@ -155,3 +155,52 @@ function createInfoSection(item) {
   );
   contentEditIcon.addEventListener("click", (event) => editSubmits(event));
 }
+
+// confirm Delete
+function confirmAndDelete(e, infoSection) {
+  e.preventDefault();
+
+  // pop up modal
+  const deleteConfirmSec = document.getElementById("delete-section");
+  deleteConfirmSec.style.display = "flex";
+
+  const deleteBtn = document.getElementById("delete-content-delete");
+
+  // Remove the previous event listener from the delete button
+  deleteBtn.removeEventListener("click", handleDeleteClick);
+
+  // Add the new event listener to the delete button
+  deleteBtn.addEventListener("click", handleDeleteClick);
+
+  let deletedItem;
+
+  function handleDeleteClick() {
+    deleteConfirmSec.style.display = "none";
+    const idToDelete = infoSection.id.split("--")[2];
+    const index = inputList.findIndex((item) => item.id === +idToDelete);
+
+    deletedItem = inputList.splice(index, 1);
+
+    infoSection.classList.add("hidden");
+
+    // Remove the event listener after it's been executed
+    deleteBtn.removeEventListener("click", handleDeleteClick);
+
+    // Show the undo message
+    showUndoMessage(infoSection, deletedItem);
+  }
+
+  // cancel button
+  const cancelBtn = document.getElementById("delete-content-cancel");
+  cancelBtn.addEventListener("click", () => {
+    deleteConfirmSec.style.display = "none";
+    deleteBtn.removeEventListener("click", handleDeleteClick);
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === deleteConfirmSec) {
+      deleteConfirmSec.style.display = "none";
+      deleteBtn.removeEventListener("click", handleDeleteClick);
+    }
+  });
+}
