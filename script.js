@@ -8,7 +8,6 @@ let formTitleInput = document.getElementById("title");
 let formDescriptionInput = document.getElementById("description");
 let formDetailsInput = document.getElementById("details");
 let inputList = [];
-let currentId = 0;
 
 // Validation
 // Error messages
@@ -59,7 +58,7 @@ function cleanInputValues() {
 // create an object from input values
 function createInputObject(formValues, newDate, submitDate) {
   return {
-    id: ++currentId,
+    id: Date.now(),
     title: formValues.title,
     description: formValues.description,
     details: formValues.details,
@@ -113,7 +112,11 @@ function createInfoSection(item) {
   // create content date
   const contentDate = document.createElement("p");
   contentDate.className = "information--section--date";
-  contentDate.innerText = item.date;
+  if (item.editDate) {
+    contentDate.innerText = item.editDate;
+  } else {
+    contentDate.innerText = item.date;
+  }
   infoContent.append(contentDate);
 
   // create icons
@@ -252,6 +255,7 @@ function deleteItemPermanently(infoSection) {
   const idToDelete = infoSection.id.split("--")[2];
   const index = inputList.findIndex((item) => item.id === +idToDelete);
   infoSection.remove();
+  localStorage.setItem("inputList", JSON.stringify(inputList));
 }
 
 // View Modal PopUp
@@ -350,6 +354,7 @@ function editSubmits(e) {
       editedContentTitle.innerText = inputList[index].title;
       editedContentDescription.innerText = inputList[index].description;
       editedContentDate.innerText = inputList[index].editDate;
+      localStorage.setItem("inputList", JSON.stringify(inputList));
     }
 
     cleanInputValues();
@@ -450,7 +455,19 @@ form.addEventListener("submit", (e) => {
   if (isValidForm() === true) {
     const newItem = createInputObject(formValues, newDate, submitDate);
     inputList.push(newItem);
+    localStorage.setItem("inputList", JSON.stringify(inputList));
     createInfoSection(newItem);
     cleanInputValues();
+  }
+});
+
+// Restore the inputList array from local storage when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  const storedInputList = localStorage.getItem("inputList");
+  if (storedInputList) {
+    inputList = JSON.parse(storedInputList);
+    inputList.forEach((item) => {
+      createInfoSection(item);
+    });
   }
 });
